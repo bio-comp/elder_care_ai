@@ -1,0 +1,63 @@
+[project]
+name = "elder-risk"
+version = "0.1.0"
+description = ""
+authors = [{ name = "Mike Hamilton", email = "mike.hamilton7@gmail.com" }]
+readme = "README.md"
+requires-python = ">3.12,<3.14"
+dependencies = [
+    "torch (>=2.8.0,<3.0.0)",
+    "pydantic (>=2.11.7,<3.0.0)",
+    "scikit-learn (>=1.7.1,<2.0.0)",
+    "transformers (>=4.55.0,<5.0.0)",
+    "duckdb (>=1.3.2,<2.0.0)",
+    "pandas (>=2.3.1,<3.0.0)",
+    "numpy (>=2.3.2,<3.0.0)",
+    "seaborn (>=0.13.2,<0.14.0)",
+    "deepeval (>=3.3.6,<4.0.0)",
+    "deepchecks (>=0.19.1,<0.20.0)",
+    "jupyterlab (>=4.4.5,<5.0.0)",
+    "great-tables (>=0.18.0,<0.19.0)",
+    "polars (>=1.32.2,<2.0.0)",
+    "statsmodels (>=0.14.5,<0.15.0)",
+    "medspacy (>=1.3.1,<2.0.0)",
+    "spacy (>=3.8.7,<4.0.0)",
+    "rarfile (>=4.2,<5.0)",
+    "loguru (>=0.7.3,<0.8.0)",
+    "patool (>=4.0.1,<5.0.0)",
+]
+
+[tool.poetry]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+ruff = "^0.12.8"
+mypy = "^1.17.1"
+pytest-sugar = "^1.0.0"
+pytest-cov = "^6.2.1"
+pytest-regressions = "^2.8.1"
+pytest-datadir = "^1.8.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+exclude = [".venv"]
+fix = true
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.format]
+quote-style = "double"
+skip-magic-trailing-comma = true
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_any_unimported = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
